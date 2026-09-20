@@ -2,7 +2,7 @@
 
 Portafolio web multi-páginas con temática aventurera / gaming / vehicles.
 
-🔗 **Sitio:** https://brayanortiz906-lab.github.io/brayanortiz906.github.io/
+🔗 **Sitio:** https://brayanortiz906-lab.github.io/BrayanOrtizCalle/
 
 ## Estructura
 
