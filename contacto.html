@@ -93,8 +93,11 @@
                 <div class="contacto-form-col">
                     <div class="contacto-form-card">
                         <h3>Envíame un mensaje ✈</h3>
-                        <!-- Using mailto as functional form (no backend needed) -->
-                        <form action="mailto:ortizcallebrayanalejadro@gmail.com" method="post" enctype="text/plain">
+                        <form action="https://formsubmit.co/ortizcallebrayanalejadro@gmail.com" method="POST">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio de Brayan Ortiz Calle">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://brayanortiz906-lab.github.io/brayanortiz906.github.io/contacto.html?enviado=1">
                             <div class="form-group">
                                 <label for="nombre">Nombre</label>
                                 <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
