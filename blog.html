@@ -257,21 +257,34 @@
     <section class="section newsletter-section">
         <div class="container">
             <div class="newsletter-card">
-                <h3>📬 Suscríbete al Blog</h3>
-                <p>Recibe nuevas entradas y actualizaciones directamente en tu correo.</p>
+                <div class="newsletter-icon-wrap">
+                    <div class="newsletter-icon-ring"></div>
+                    <div class="newsletter-icon-inner">📬</div>
+                </div>
+                <div class="newsletter-text">
+                    <span class="newsletter-badge">✨ Gratis · Sin spam</span>
+                    <h3>📬 Suscríbete al Blog</h3>
+                    <p class="newsletter-desc">Recibe nuevas entradas y actualizaciones directamente en tu correo. Historias reales de mi camino en el diseño, los sistemas y el desarrollo.</p>
+                </div>
                 <form id="newsletterForm" action="https://formsubmit.co/ajax/ortizcallebrayanalejandro@gmail.com" method="POST" class="newsletter-form">
                     <input type="hidden" name="_subject" value="Nueva suscripción al blog de Brayan Ortiz Calle">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_autoresponse" value="Gracias por suscribirte al blog de Brayan Ortiz Calle. Recibirás nuevas entradas en tu correo.">
                     <input type="hidden" name="_cc" value="ortizcallebrayanalejandro@gmail.com">
                     <input type="text" name="_honeypot" style="display:none">
-                    <div class="newsletter-input-group">
-                        <input type="email" name="email" placeholder="tu@correo.com" required class="newsletter-input">
-                        <button type="submit" id="btnNewsletter" class="btn btn-primary newsletter-btn">Suscribirse</button>
+                    <div class="newsletter-input-row">
+                        <div class="newsletter-input-wrap">
+                            <svg class="newsletter-input-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+                            <input type="email" name="email" placeholder="tu@correo.com" required class="newsletter-input" autocomplete="email">
+                        </div>
+                        <button type="submit" id="btnNewsletter" class="btn-newsletter-submit">
+                            <span class="btn-subscribe-text">Suscribirse</span>
+                            <svg class="btn-subscribe-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
                     </div>
                     <p class="newsletter-note">🔒 Respeto tu privacidad — solo usaré tu correo para el blog. La primera vez recibirás un correo para activar.</p>
                 </form>
-                <p id="mensajeEstado" style="margin-top: 15px; font-weight: bold; text-align: center;"></p>
+                <p id="mensajeEstado" class="newsletter-mensaje"></p>
             </div>
         </div>
     </section>
@@ -314,10 +327,10 @@
             const estado = document.getElementById('mensajeEstado');
             const formData = new FormData(this);
 
-            btn.innerHTML = '<span>Suscribiendo...</span>';
+            btn.querySelector('.btn-subscribe-text').textContent = 'Suscribiendo...';
             btn.disabled = true;
             estado.textContent = '';
-            estado.style.color = 'inherit';
+            estado.className = 'newsletter-mensaje';
 
             fetch(this.action, {
                 method: 'POST',
@@ -330,18 +343,18 @@
             .then(data => {
                 if (data.success) {
                     this.reset();
-                    estado.style.color = '#4ade80';
                     estado.textContent = '¡Suscrito con éxito! Recibirás nuevas entradas por correo.';
-                    btn.innerHTML = '<span>Suscribirse</span>';
+                    estado.className = 'newsletter-mensaje success';
+                    btn.querySelector('.btn-subscribe-text').textContent = 'Suscribirse';
                     btn.disabled = false;
                 } else {
                     throw new Error(data.message || 'Error al suscribir');
                 }
             })
             .catch(error => {
-                estado.style.color = '#f87171';
                 estado.textContent = 'Hubo un error al suscribir. Por favor intenta de nuevo.';
-                btn.innerHTML = '<span>Suscribirse</span>';
+                estado.className = 'newsletter-mensaje error';
+                btn.querySelector('.btn-subscribe-text').textContent = 'Suscribirse';
                 btn.disabled = false;
             });
         });
