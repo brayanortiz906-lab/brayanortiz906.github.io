@@ -259,19 +259,20 @@
             <div class="newsletter-card">
                 <h3>📬 Suscríbete al Blog</h3>
                 <p>Recibe nuevas entradas y actualizaciones directamente en tu correo.</p>
-                <form action="https://formsubmit.co/ortizcallebrayanalejadro@gmail.com" method="POST" class="newsletter-form">
-                    <input type="hidden" name="_subject" value="Nueva suscripción al blog de Brayan Ortiz Calle">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://brayanortiz906-lab.github.io/brayanortiz906.github.io/blog.html?suscrito=1">
+                <a href="mailto:ortizcallebrayanalejadro@gmail.com?subject=Suscripción al blog de Brayan Ortiz Calle&body=Hola Brayan,%0A%0AQuisiera suscribirme al blog.%0A%0ANombre: %0AEmail: %0A%0A---%0AEste mensaje fue enviado desde el portafolio: https://brayanortiz906-lab.github.io/brayanortiz906.github.io/blog.html" class="newsletter-link">
                     <div class="newsletter-input-group">
-                        <input type="email" name="email" placeholder="tu@correo.com" required class="newsletter-input">
-                        <button type="submit" class="btn btn-primary newsletter-btn">Suscribirse</button>
+                        <input type="email" placeholder="tu@correo.com" readonly class="newsletter-input" value="Ingresa tu email y haz clic aquí para suscribirte">
+                        <button type="button" class="btn btn-primary newsletter-btn" onclick="window.location.href=this.previousElementSibling.previousElementSibling.href">Suscribirse</button>
                     </div>
-                    <p class="newsletter-note">🔒 Respeto tu privacidad — solo usaré tu correo para el blog.</p>
-                </form>
+                </a>
+                <p class="newsletter-note">🔒 Respeto tu privacidad — solo usaré tu correo para el blog.</p>
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <a href="index.html" class="nav-logo">BRAYAN<span>.ORTIZ</span></a>
                     <p>Diseñador Gráfico | Asistente en Sistemas | Developer en formación</p>
