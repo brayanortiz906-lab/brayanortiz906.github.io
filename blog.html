@@ -7,6 +7,9 @@
     <meta name="description" content="Blog de Brayan Ortiz Calle — Experiencias reales: mis prácticas en Multimpresos S.A.S., Dan Carlton, y mi camino entre el diseño gráfico y el desarrollo de software.">
     <link rel="canonical" href="https://brayanortiz906-lab.github.io/brayanortiz906.github.io/blog.html">
     <link rel="stylesheet" href="css/style.css">
+    <meta property="og:title" content="Blog — Brayan Ortiz Calle">
+    <meta property="og:description" content="Stories from my real-world experience in design and systems.">
+    <meta property="og:type" content="website">
 </head>
 <body>
     <nav class="navbar">
@@ -30,34 +33,37 @@
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html">Inicio</a></li>
-                <li><a href="sobre-mi.html">Sobre Mí</a></li>
+                <li><a href="sobre-mi.html">Sobre Mi</a></li>
                 <li><a href="experiencia.html">Experiencia</a></li>
                 <li><a href="proyectos.html">Proyectos</a></li>
                 <li><a href="habilidades.html">Habilidades</a></li>
-                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
                 <li><a href="blog.html" class="active">Blog</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="section blog-section" id="blog">
+    <section class="blog-hero">
         <div class="container">
-            <div class="section-header">
-                <h2>Blog</h2>
-                <p>Experiencias reales: lo que aprendí en Multimpresos, Dan Carlton y mi camino entre el diseño y el código</p>
+            <div class="blog-hero-content">
+                <h1>Blog</h1>
+                <p>Historias reales de mi camino: lo que aprendí en Multimpresos, mi tiempo en Dan Carlton, y cómo el diseño y los sistemas se encuentran en mi vida como desarrollador.</p>
             </div>
+        </div>
+    </section>
 
+    <section class="section blog-section">
+        <div class="container">
             <div class="blog-filters">
-                <button class="blog-filter-btn active" data-category="all">Todos</button>
-                <button class="blog-filter-btn" data-category="diseno">🎨 Diseño</button>
-                <button class="blog-filter-btn" data-category="hardware">🔧 Hardware/Sistemas</button>
-                <button class="blog-filter-btn" data-category="desarrollo">💻 Desarrollo</button>
-                <button class="blog-filter-btn" data-category="experiencia">📋 Experiencia</button>
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="diseno">Diseño</button>
+                <button class="filter-btn" data-filter="sistemas">Sistemas</button>
+                <button class="filter-btn" data-filter="experiencia">Experiencia</button>
+                <button class="filter-btn" data-filter="desarrollo">Desarrollo</button>
             </div>
 
             <div class="blog-grid">
-
                 <article class="blog-card" data-category="diseno experiencia">
                     <div class="blog-card-img" style="background: linear-gradient(135deg, #1e1b4b, #7c3aed);">
                         <span class="blog-icon">🎨</span>
@@ -67,10 +73,10 @@
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">25 Sep 2025</span>
+                            <span class="blog-date">Sep 2025</span>
                             <span class="blog-read-time">5 min lectura</span>
                         </div>
-                        <h2>Cómo aprendimos a ver colores en Multimpresos — y por qué eso me ayudó en el código</h2>
+                        <h3>Cómo aprendimos a ver colores en Multimpresos — y por qué eso me ayudó en el código</h3>
                         <p class="blog-excerpt">
                             En Multimpresos S.A.S. revisábamos tonalidades de color una y otra vez. Lo que nadie me dijo en ese momento: esa capacidad de ver diferencias mínimas en los colores se convertiría en una de mis herramientas más poderosas como desarrollador — para detectar errores en el código que otros pasan por alto.
                         </p>
@@ -78,25 +84,23 @@
                             <span class="blog-tag">Multimpresos</span>
                             <span class="blog-tag">Control de color</span>
                             <span class="blog-tag">Diseño</span>
-                            <span class="blog-tag">Atención al detalle</span>
                         </div>
-                        <a href="#art1" class="blog-read-more">Leer artículo completo →</a>
+                        <a href="#art1" class="blog-read-more" onclick="history.back(); return false;">Leer artículo completo →</a>
                     </div>
                 </article>
-
-                <article class="blog-card" data-category="hardware experiencia">
+                <article class="blog-card" data-category="sistemas experiencia">
                     <div class="blog-card-img" style="background: linear-gradient(135deg, #0f172a, #2563eb);">
                         <span class="blog-icon">🖥️</span>
                         <div class="blog-img-overlay">
-                            <span class="blog-category-badge">Hardware + Experiencia</span>
+                            <span class="blog-category-badge">Sistemas + Experiencia</span>
                         </div>
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">26 Sep 2025</span>
+                            <span class="blog-date">2024</span>
                             <span class="blog-read-time">6 min lectura</span>
                         </div>
-                        <h2>815 horas en Dan Carlton: de arreglar impresoras y redes a entender cómo funciona el software</h2>
+                        <h3>815 horas en Dan Carlton: de arreglar impresoras y redes a entender cómo funciona el software</h3>
                         <p class="blog-excerpt">
                             En Dan Carlton reparaba computadores, configuraba redes, hacía backups, formateaba sistemas. Nadie me enseñó teoría — aprendí haciendo. Ahora entiendo por qué esa experiencia práctica es tan valiosa para el desarrollo de software: cuando algo falla, no te quedas parado, buscas la causa raíz.
                         </p>
@@ -106,12 +110,11 @@
                             <span class="blog-tag">Hardware</span>
                             <span class="blog-tag">Redes</span>
                         </div>
-                        <a href="#art2" class="blog-read-more">Leer artículo completo →</a>
+                        <a href="#art2" class="blog-read-more" onclick="history.back(); return false;">Leer artículo completo →</a>
                     </div>
                 </article>
-
                 <article class="blog-card" data-category="desarrollo experiencia">
-                    <div class="blog-card-img" style="background: linear-gradient(135deg, #334155, #38bdf8);">
+                    <div class="blog-card-img" style="background: linear-gradient(135deg, #1e293b, #38bdf8);">
                         <span class="blog-icon">💻</span>
                         <div class="blog-img-overlay">
                             <span class="blog-category-badge">Desarrollo + Experiencia</span>
@@ -119,12 +122,12 @@
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">27 Sep 2025</span>
-                            <span class="blog-read-time">5 min lectura</span>
+                            <span class="blog-date">Proyecto personal</span>
+                            <span class="blog-read-time">7 min lectura</span>
                         </div>
-                        <h2>La página de sistemas que desarrollé: registro, venta, productos y envío de correos — y por qué el "todo funcional" importa</h2>
+                        <h3>La página de sistemas que desarrollé: registro, venta, productos y envío de correos — y por qué el "todo funcional" importa</h3>
                         <p class="blog-excerpt">
-                            Creé una página completa con sistema de registro/login, edición de usuarios, añadir/quitar productos, sistema de compra/venta y envío de correos automáticos. Era compleja: HTML, CSS, JavaScript, SQL. Ahora llevo años sin tocarla y sé que algunos partes pueden estar dañadas — pero lo que aprendí de construirla completa sigue siendo valioso.
+                            Creé una página completa con sistema de registro/login, edición de usuarios, añadir/quitar productos, sistema de compra/venta y envío de correos automáticos. Era compleja: HTML, CSS, JavaScript, SQL. Ahora llevo años sin tocarla y sé que algunas partes pueden estar dañadas — pero lo que aprendí de construirla completa sigue siendo valioso.
                         </p>
                         <div class="blog-tags">
                             <span class="blog-tag">Desarrollo web</span>
@@ -132,12 +135,11 @@
                             <span class="blog-tag">SQL</span>
                             <span class="blog-tag">PHP</span>
                         </div>
-                        <a href="#art3" class="blog-read-more">Leer artículo completo →</a>
+                        <a href="#art3" class="blog-read-more" onclick="history.back(); return false;">Leer artículo completo →</a>
                     </div>
                 </article>
-
                 <article class="blog-card" data-category="diseno experiencia">
-                    <div class="blog-card-img" style="background: linear-gradient(135deg, #3b0764, #e879f9);">
+                    <div class="blog-card-img" style="background: linear-gradient(135deg, #1e1b4b, #e879f9);">
                         <span class="blog-icon">✂️</span>
                         <div class="blog-img-overlay">
                             <span class="blog-category-badge">Diseño + Experiencia</span>
@@ -145,175 +147,126 @@
                     </div>
                     <div class="blog-card-content">
                         <div class="blog-meta">
-                            <span class="blog-date">28 Sep 2025</span>
+                            <span class="blog-date">Sep 2025</span>
                             <span class="blog-read-time">4 min lectura</span>
                         </div>
-                        <h2>Deconstruir para crear: lo que me enseñó en Multimpresos sobre desarmar algo para entenderlo y mejorarlo</h2>
+                        <h3>Deconstruir para crear: lo que me enseñó en Multimpresos sobre desarmar algo para entenderlo y mejorarlo</h3>
                         <p class="blog-excerpt">
-                            En Multimpresos me pidieron ayuda con colores, verificación de tonalidad. No sabía todo lo que ellos esperaban, pero aprendí a partir de cero. La lección: cuando entras en un ambiente donde no conoces todo, no te quedes atrás — adapta rápido, pregunta, aprende haciendo. Eso es lo que hice y lo que sigo haciendo.
+                            En Multimpresos me pidieron ayuda con colores, verificación de tonalidad. No sabía todo lo que ellos esperaban, pero aprendí a partir de cero. La lección: cuando entras en un ambiente donde no conoces todo, no te quedes atrás — adapta rápido, pregunta, aprende haciendo.
                         </p>
                         <div class="blog-tags">
                             <span class="blog-tag">Multimpresos</span>
                             <span class="blog-tag">Aprendizaje</span>
                             <span class="blog-tag">Adaptabilidad</span>
-                            <span class="blog-tag">Diseño</span>
                         </div>
-                        <a href="#art4" class="blog-read-more">Leer artículo completo →</a>
+                        <a href="#art4" class="blog-read-more" onclick="history.back(); return false;">Leer artículo completo →</a>
                     </div>
                 </article>
-
             </div>
 
-            <div class="blog-articles-section">
-                <h2>Artículos Completos</h2>
-                <div class="articles-container">
-
-                    <article class="full-article" id="art1">
-                        <div class="article-header">
-                            <h2>Cómo aprendimos a ver colores en Multimpresos — y por qué eso me ayudó en el código</h2>
-                            <div class="article-meta-full">
-                                <span class="blog-date">25 Sep 2025</span>
-                                <span class="blog-read-time">5 min lectura</span>
-                                <span class="blog-category">Diseño + Experiencia</span>
-                            </div>
-                        </div>
-                        <div class="article-body">
-                            <p>Cuando llegué a Multimpresos S.A.S. para mis prácticas de impresión, no esperaba aprender sobre tonos de color. Pensé que sería solo verificar archivos, revisar sangrados, algo rutinario. Pero rápidamente me di cuenta de que el trabajo allí era mucho más profundo.</p>
-                            
-                            <h3>Aprender a ver lo invisible</h3>
-                            <p>Nuestro trabajo consistía en revisar cómo los colores se imprimían, comparar la tonalidad entre el diseño original y lo que salía en la impresora, ajustar hasta que quedaba perfecto. Al principio no veía las diferencias — todo parecía igual. Pero con el tiempo, el ojo se entrenó. Empecé a notar diferencias mínimas en el azul, en el rojo, en los verdes. Eso fue algo que no me enseñaron en teoría: se entrenó con la práctica, mirando una y otra vez.</p>
-
-                            <h3>La conexión con el desarrollo</h3>
-                            <p>Cuando luego empecé a programar, noté algo: esa misma capacidad de "ver diferencias mínimas" me servía en el código. Un error de sintaxis una línea desplazada, una variable mal escrita — para muchos es indistinguible, para mí era visible. No es que sea súper humano, es que entrené mi atención al detalle en un entorno donde los detalles importaban de verdad.</p>
-
-                            <h3>Lo que Multimpresos me enseñó que las clases no enseñan</h3>
-                            <p>En el aula te enseñan teoría de color: primarios, secundarios, CMYK, RGB. Pero no te enseñan a ver la diferencia entre un azul que sale bien y uno que sale apagado. Eso solo se aprende revisando, comparando, ajustando. Lo mismo aplica al código: te enseñan la sintaxis pero no te enseñan a detectar un error lógico solo por la "sensación" de que algo no huele bien. Eso se desarrolla con experiencia.</p>
-
-                            <p>Lo que salió de Multimpresos no fue solo saber de impresión — fue desarrollar una capacidad de atención que luego me dio una ventaja en el código. Los colores me enseñaron a ver. Ver me enseñó a detectar errores. Y detectar errores es lo que hace que el código funcione bien.</p>
-                        </div>
-                    </article>
-
-                    <article class="full-article" id="art2">
-                        <div class="article-header">
-                            <h2>815 horas en Dan Carlton: de arreglar impresoras y redes a entender cómo funciona el software</h2>
-                            <div class="article-meta-full">
-                                <span class="blog-date">26 Sep 2025</span>
-                                <span class="blog-read-time">6 min lectura</span>
-                                <span class="blog-category">Hardware + Experiencia</span>
-                            </div>
-                        </div>
-                        <div class="article-body">
-                            <p>Mis prácticas en Dan Carlton fueron 815 horas de trabajo técnico real: arreglando computadores, manteniendo redes, configurando impresoras, haciendo backups, formateando sistemas, instalando aplicaciones, diagnosticando fallas. No era trabajo de oficina — era poner las manos en el hardware, abrir equipos, ver qué fallaba, resolver.</p>
-
-                            <h3>Aprender sin teoría</h3>
-                            <p>No había un manual que seguí. Llegaba, me pedían algo, yo intentaba resolver. Si no sabía cómo, preguntaba, buscaba, probaba. Fue aprender desde cero, en el momento, con presión real. Y esa es la mejor forma de aprender — cuando el equipo no funciona y el usuario necesita que funcione ya.</p>
-
-                            <h3>Arreglar sistemas enseña a pensar en sistemas</h3>
-                            <p>Cuando arreglas una red, piensas en cómo los componentes se conectan: el cable, el switch, el router, la configuración IP, el dns. Es un sistema. Cuando después escribes código, piensas igual: cómo los módulos se conectan, cómo los datos fluyen, qué pasa si un componente falla. La forma de pensar es la misma.</p>
-
-                            <h3>Lo que nadie me enseñó en clase</h3>
-                            <p>En clase te enseñan teoría de redes: OSI, TCP/IP, subnetting. Pero no te enseñan la realidad: que un cable mal conectado puede causar más problemas que una mala configuración, que un driver actualizado incorrectamente puede dejar el sistema inestable, que un backup que no se hizo correctamente no sirve de nada. Eso solo lo aprendes arreglando cosas en la práctica.</p>
-
-                            <p>Lo que me llevé de Dan Carlton: la capacidad de diagnosticar problemas desde cero, la paciencia para buscar la causa raíz, la humildad para admitir que no sé y aprender en el momento. Esas habilidades no se obtienen en el aula — se obtienen en el trabajo real.</p>
-                        </div>
-                    </article>
-
-                    <article class="full-article" id="art3">
-                        <div class="article-header">
-                            <h2>La página de sistemas que desarrollé: registro, venta, productos y envío de correos — y por qué el "todo funcional" importa</h2>
-                            <div class="article-meta-full">
-                                <span class="blog-date">27 Sep 2025</span>
-                                <span class="blog-read-time">5 min lectura</span>
-                                <span class="blog-category">Desarrollo + Experiencia</span>
-                            </div>
-                        </div>
-                        <div class="article-body">
-                            <p>Desarrollé una página web completa con sistemas de registro e inicio de sesión, edición de usuarios, añadir y quitar productos, sistema de compra y venta, y envío automático de correos cuando se completaba un formulario. Era un proyecto completo: HTML, CSS, JavaScript, SQL, y un formulario que enviaba todo lo que el usuario necesitaba por correo.</p>
-
-                            <h3>Un sistema completo es más que la suma de partes</h3>
-                            <p>No fue solo "hacer una página bonita". Fue conectar sistemas: el registro con la base de datos, el login con la sesión, los productos con el catálogo, el carrito con el pagar, el formulario con el envío de correo. Cada parte dependía de las otras. Si el login fallaba, los productos no se mostraban. Si el envío de correo fallaba, el cliente no recibía la confirmación. Todo tenía que funcionar juntos.</p>
-
-                            <h3>Lo difícil de mantener</h3>
-                            <p>El problema: llevo años sin tocar ese proyecto. El código puede tener partes que hoy no funcionen. Alguien puede haber cambiado la base de datos. Las APIs de correo pueden haber cambiado. Es lo que pasa con proyectos que no se mantienen: se vuelven estáticos en el tiempo. Pero lo que aprendí construyéndolo sigue siendo valioso.</p>
-
-                            <h3>Lo que aprendí de hacerlo completo</h3>
-                            <p>Que un sistema funcional no es solo código que funciona — es código que resuelve un problema real. Que cuando un usuario llena un formulario, necesita recibir confirmación. Que cuando un cliente compra, necesita saber que todo está registrado. La funcionalidad completa es lo que hace que una página no sea solo "otra página web" sino una herramienta que la gente puede usar.</p>
-
-                            <p>Aunque hoy no pueda demostrarlo funcionando (por el SQL requerido y el tiempo sin mantenimiento), lo que sé es que lo construí completo y funcionando en su momento. Y eso me dio la confianza de que puedo construir sistemas completos, no solo páginas estáticas.</p>
-                        </div>
-                    </article>
-
-                    <article class="full-article" id="art4">
-                        <div class="article-header">
-                            <h2>Deconstruir para crear: lo que me enseñó en Multimpresos sobre desarmar algo para entenderlo y mejorarlo</h2>
-                            <div class="article-meta-full">
-                                <span class="blog-date">28 Sep 2025</span>
-                                <span class="blog-read-time">4 min lectura</span>
-                                <span class="blog-category">Diseño + Experiencia</span>
-                            </div>
-                        </div>
-                        <div class="article-body">
-                            <p>En Multimpresos me dieron tareas que no conocía del todo: verificar colores, revisar tonalidades, ayudar en procesos de impresión. No sabía lo que ellos esperaban que supiera. Pero aprendí lo más importante: cuando no sabes, no te paras — aprendes haciendo, preguntas, observas, mejores.</p>
-
-                            <h3>Adaptabilidad rápida</h3>
-                            <p>Mi meta en esas prácticas no era ser el experto del salón — era poder contribuir desde el día uno. Aunque mi formación no colindaba exactamente con lo que ellos hacían, logré adaptarme. Porque el diseño, al final, es pensar visualmente, y eso ya lo tenía. Lo demás — los procesos, las máquinas, los flujos — se aprendía en el camino.</p>
-
-                            <h3>Descomponer para entender</h3>
-                            <p>Una de las cosas que más me ayudó: cuando algo no quedaba bien, no lo dejaba así. Lo desarmaba, miraba cada parte, preguntaba qué pasaba, ajustaba. Un color que no coincidía: ¿cuál es la origen? ¿El archivo? ¿La configuración? ¿El papel? ¿La tinta? Se puede desarmar cualquier problema si lo miras parte por parte. Eso me sirvió mucho luego, tanto en diseño como en código.</p>
-
-                            <h3>La vida en Multimpresos</h3>
-                            <p>No todo era perfecto — a veces no sabía lo que ellos esperaban, a veces el ritmo era rápido y no podía quedarme atrás. Pero aprendí a pedir ayuda cuando necesitaba, a aprender rápido, a ser parte del equipo aunque viniera de otro background. Y eso es algo que sigo usando: no importa si no sabes todo desde el principio — lo importante es la capacidad de aprender en el momento y contribuir.</p>
-
-                            <p>Lo que salió de Multimpresos: la confianza de que puedo aprender rápido, la capacidad de deconstruir problemas, y la comprensión de que el diseño no es solo crear algo nuevo — es también entender cómo se construyen las cosas correctamente.</p>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="section newsletter-section">
-        <div class="container">
-            <div class="newsletter-card">
-                <h3>📬 Suscríbete al Blog</h3>
-                <p>Recibe nuevas entradas y actualizaciones directamente en tu correo.</p>
-                <form action="https://formspree.io/f/form-id-brayan-ortiz" method="POST" class="newsletter-form">
-                    <div class="newsletter-input-group">
-                        <input type="email" name="email" placeholder="tu@correo.com" required class="newsletter-input">
-                        <button type="submit" class="btn btn-primary newsletter-btn">Suscribirse</button>
+            <div class="blog-full-articles">
+                <article class="full-article" id="art1">
+                    <h2>Cómo aprendimos a ver colores en Multimpresos — y por qué eso me ayudó en el código</h2>
+                    <div class="article-meta-full">
+                        <span class="blog-date">Sep 2025</span>
+                        <span class="blog-read-time">5 min lectura</span>
+                        <span class="blog-category">Diseño + Experiencia</span>
                     </div>
-                    <p class="newsletter-note">🔒 Respeto tu privacidad — solo usaré tu correo para el blog.</p>
-                </form>
+                    <div class="article-body">
+                        <p>Cuando llegué a Multimpresos S.A.S. para mis prácticas de impresión, no esperaba aprender sobre tonos de color. Pensé que sería solo verificar archivos, revisar sangrados, algo rutinario. Pero rápidamente me di cuenta de que el trabajo allí era mucho más profundo.</p>
+                        <h3>Aprender a ver lo invisible</h3>
+                        <p>Nuestro trabajo consistía en revisar cómo los colores se imprimían, comparar la tonalidad entre el diseño original y lo que salía en la impresora, ajustar hasta que quedaba perfecto. Al principio no veía las diferencias — todo parecía igual. Pero con el tiempo, el ojo se entrenó. Empecé a notar diferencias mínimas en el azul, en el rojo, en los verdes. Eso fue algo que no me enseñaron en teoría: se entrenó con la práctica, mirando una y otra vez.</p>
+                        <p>La comprensión de formas también fue fundamental — cómo un contorno, cómo una curva, cómo un espacio negativo pueden cambiar completamente la percepción visual. No se trata solo de "trazar algo bonito", se trata de entender cómo las formas comunican, cómo el espacio da respiro, cómo cada elección visual cuenta una historia.</p>
+                        <h3>La conexión con el desarrollo</h3>
+                        <p>Cuando luego empecé a programar, noté algo: esa misma capacidad de "ver diferencias mínimas" me servía en el código. Un error de sintaxis una línea desplazada, una variable mal escrita — para muchos es indistinguible, para mí era visible. No es que sea súper humano, es que entrené mi atención al detalle en un entorno donde los detalles importaban de verdad.</p>
+                        <p>En el código, al igual que en el impreso, un pequeño desalineación puede arruinar toda la composición. Un color con el tono incorrecto puede cambiar el significado de un mensaje. En el código, una variable con el valor equivocado puede hacer que toda la aplicación falle. La atención al detalle que desarrollé en Multimpresos es la misma que ahora aplico al revisar mi código.</p>
+                        <h3>Lo que Multimpresos me enseñó que las clases no enseñan</h3>
+                        <p>En el aula te enseñan teoría de color: primarios, secundarios, CMYK, RGB. Pero no te enseñan a ver la diferencia entre un azul que sale bien y uno que sale apagado. Eso solo se aprende revisando, comparando, ajustando. Lo mismo aplica al código: te enseñan la sintaxis pero no te enseñan a detectar un error lógico solo por la "sensación" de que algo no huele bien. Eso se desarrolla con experiencia.</p>
+                        <p>Lo que salió de Multimpresos no fue solo saber de impresión — fue desarrollar una capacidad de atención que luego me dio una ventaja en el código. Los colores me enseñaron a ver. Ver me enseñó a detectar errores. Y detectar errores es lo que hace que el código funcione bien.</p>
+                        <a href="#" class="article-back" onclick="history.back(); return false;">← Volver a todos los artículos</a>
+                    </div>
+                </article>
+                <article class="full-article" id="art2">
+                    <h2>815 horas en Dan Carlton: de arreglar impresoras y redes a entender cómo funciona el software</h2>
+                    <div class="article-meta-full">
+                        <span class="blog-date">2024</span>
+                        <span class="blog-read-time">6 min lectura</span>
+                        <span class="blog-category">Sistemas + Experiencia</span>
+                    </div>
+                    <div class="article-body">
+                        <p>Mis prácticas en Dan Carlton fueron 815 horas de trabajo técnico real: arreglando computadores, manteniendo redes, configurando impresoras, haciendo backups, formateando sistemas, instalando aplicaciones, diagnosticando fallas. No era trabajo de oficina — era poner las manos en el hardware, abrir equipos, ver qué fallaba, resolver.</p>
+                        <h3>Aprender sin teoría — la forma más efectiva de aprender</h3>
+                        <p>No había un manual que seguí. Llegaba, me pedían algo, yo intentaba resolver. Si no sabía cómo, preguntaba, buscaba, probaba. Fue aprender desde cero, en el momento, con presión real. Y esa es la mejor forma de aprender — cuando el equipo no funciona y el usuario necesita que funcione ya.</p>
+                        <p>En Dan Carlton no había tiempo para teórico. Si una impresora no imprimía, tenía que encontrar por qué ahora. Si una red no conectaba, tenía que hacer que funcionara. Esa presión me enseñó a ser práctico, a priorizar lo que realmente importa: que las cosas funcionen.</p>
+                        <h3>Arreglar sistemas enseña a pensar en sistemas</h3>
+                        <p>Cuando arreglas una red, piensas en cómo los componentes se conectan: el cable, el switch, el router, la configuración IP, el DNS. Es un sistema. Cuando después escribes código, piensas igual: cómo los módulos se conectan, cómo los datos fluyen, qué pasa si un componente falla. La forma de pensar es la misma.</p>
+                        <p>Entender que todo es un sistema — desde una impresora hasta una aplicación web — es lo que me permite ver el panorama completo. No solo veo el componente individual, veo cómo se relaciona con los demás. Esa es la diferencia entre un técnico que arregla y un ingeniero que entiende.</p>
+                        <h3>Lo que nadie me enseñó en clase</h3>
+                        <p>En clase te enseñan teoría de redes: OSI, TCP/IP, subnetting. Pero no te enseñan la realidad: que un cable mal conectado puede causar más problemas que una mala configuración, que un driver actualizado incorrectamente puede dejar el sistema inestable, que un backup que no se hizo correctamente no sirve de nada. Eso solo lo aprendes arreglando cosas en la práctica.</p>
+                        <p>Lo que me llevé de Dan Carlton: la capacidad de diagnosticar problemas desde cero, la paciencia para buscar la causa raíz, la humildad para admitir que no sé y aprender en el momento. Esas habilidades no se obtienen en el aula — se obtienen en el trabajo real, con las manos en la masa.</p>
+                        <a href="#" class="article-back" onclick="history.back(); return false;">← Volver a todos los artículos</a>
+                    </div>
+                </article>
+                <article class="full-article" id="art3">
+                    <h2>La página de sistemas que desarrollé: registro, venta, productos y envío de correos — y por qué el "todo funcional" importa</h2>
+                    <div class="article-meta-full">
+                        <span class="blog-date">Proyecto personal</span>
+                        <span class="blog-read-time">7 min lectura</span>
+                        <span class="blog-category">Desarrollo + Experiencia</span>
+                    </div>
+                    <div class="article-body">
+                        <p>Desarrollé una página web completa con sistemas de registro e inicio de sesión, edición de usuarios, añadir y quitar productos, sistema de compra y venta, y envío automático de correos cuando se completaba un formulario. Era un proyecto completo: HTML, CSS, JavaScript, SQL, y un formulario que enviaba todo lo que el usuario necesitaba por correo.</p>
+                        <h3>Un sistema completo es más que la suma de partes</h3>
+                        <p>No fue solo "hacer una página bonita". Fue conectar sistemas: el registro con la base de datos, el login con la sesión, los productos con el catálogo, el carrito con el pagar, el formulario con el envío de correo. Cada parte dependía de las otras. Si el login fallaba, los productos no se mostraban. Si el envío de correo fallaba, el cliente no recibía la confirmación. Todo tenía que funcionar juntos.</p>
+                        <p>Y aprendí que un sistema funcionando es más que código que corre — es código que resuelve un problema real. La página no era un ejercicio académico, era una herramienta real que personas iban a usar para comprar, vender, registrarse. Esa responsabilidad me enseñó a pensar en el usuario, no solo en el código.</p>
+                        <h3>Lo difícil de mantener</h3>
+                        <p>El problema: llevo años sin tocar ese proyecto. El código puede tener partes que hoy no funcionen. Alguien puede haber cambiado la base de datos. Las APIs de correo pueden haber cambiado. Es lo que pasa con proyectos que no se mantienen: se vuelven estáticos en el tiempo. Pero lo que aprendí construyéndolo sigue siendo valioso.</p>
+                        <p>Porque lo que sé es que pude construir un sistema completo desde cero, con todas las piezas conectadas, funcionando en su momento. Eso me dio la confianza de que puedo hacer cosas complejas, no solo páginas simples.</p>
+                        <h3>Lo que aprendí de hacerlo completo</h3>
+                        <p>Que un sistema funcional no es solo código que funciona — es código que resuelve un problema real. Que cuando un usuario llena un formulario, necesita recibir confirmación. Que cuando un cliente compra, necesita saber que todo está registrado. La funcionalidad completa es lo que hace que una página no sea solo "otra página web" sino una herramienta que la gente puede usar.</p>
+                        <p>Aunque hoy no pueda demostrarlo funcionando (por el SQL requerido y el tiempo sin mantenimiento), lo que sé es que lo construí completo y funcionando en su momento.</p>
+                        <a href="#" class="article-back" onclick="history.back(); return false;">← Volver a todos los artículos</a>
+                    </div>
+                </article>
+                <article class="full-article" id="art4">
+                    <h2>Deconstruir para crear: lo que me enseñó en Multimpresos sobre desarmar algo para entenderlo y mejorarlo</h2>
+                    <div class="article-meta-full">
+                        <span class="blog-date">Sep 2025</span>
+                        <span class="blog-read-time">4 min lectura</span>
+                        <span class="blog-category">Diseño + Experiencia</span>
+                    </div>
+                    <div class="article-body">
+                        <p>En Multimpresos me dieron tareas que no conocía del todo: verificar colores, revisar tonalidades, ayudar en procesos de impresión. No sabía lo que ellos esperaban que supiera. Pero aprendí lo más importante: cuando no sabes, no te paras — aprendes haciendo, preguntas, observas, mejores.</p>
+                        <h3>Adaptabilidad rápida</h3>
+                        <p>Mi meta en esas prácticas no era ser el experto del salón — era poder contribuir desde el día uno. Aunque mi formación no colindaba exactamente con lo que ellos hacían, logré adaptarme. Porque el diseño, al final, es pensar visualmente, y eso ya lo tenía. Lo demás — los procesos, las máquinas, los flujos — se aprendía en el camino.</p>
+                        <p>Aprendí a no quedarme atrás. A pedir ayuda cuando la necesitaba. A observar cómo hacían las cosas y luego contribuir. Eso es lo que me permitió ser útil aunque viniera de otro background.</p>
+                        <h3>Descomponer para entender</h3>
+                        <p>Una de las cosas que más me ayudó: cuando algo no quedaba bien, no lo dejaba así. Lo desarmaba, miraba cada parte, preguntaba qué pasaba, ajustaba. Un color que no coincidía: ¿cuál es la origen? ¿El archivo? ¿La configuración? ¿El papel? ¿La tinta? Se puede desarmar cualquier problema si lo miras parte por parte.</p>
+                        <p>Eso me sirvió mucho luego, tanto en diseño como en código. Porque el diseño no es solo crear algo nuevo — es también entender cómo se construyen las cosas correctamente. Y el código, igual: cuando algo no funciona, no te quedas con la mano, desarmas, buscas, arreglas.</p>
+                        <h3>La vida en Multimpresos</h3>
+                        <p>No todo era perfecto — a veces no sabía lo que ellos esperaban, a veces el ritmo era rápido y no podía quedarme atrás. Pero aprendí a pedir ayuda cuando necesitaba, a aprender rápido, a ser parte del equipo aunque viniera de otro background. Y eso es algo que sigo usando: no importa si no sabes todo desde el principio — lo importante es la capacidad de aprender en el momento y contribuir.</p>
+                        <p>Lo que salió de Multimpresos: la confianza de que puedo aprender rápido, la capacidad de deconstruir problemas, y la comprensión de que el diseño no es solo crear algo nuevo — es también entender cómo se construyen las cosas correctamente.</p>
+                        <a href="#" class="article-back" onclick="history.back(); return false;">← Volver a todos los artículos</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
+
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <svg class="nav-logo-icon" viewBox="0 0 40 40" width="28" height="28" aria-hidden="true">
-                        <defs>
-                            <linearGradient id="lg2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#38bdf8"/>
-                                <stop offset="1" stop-color="#7c3aed"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="20" cy="20" r="19" stroke="url(#lg2)" stroke-width="1.5" fill="rgba(56,189,248,0.08)"/>
-                        <circle cx="20" cy="13" r="5.2" fill="url(#lg2)"/>
-                        <path d="M7 34.5c.1-8 5.6-14 12.5-14s12 5.9 12 13.9" stroke="url(#lg2)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-                    </svg>
-                    <span class="nav-logo-text">BRAYAN<span>.ORTIZ</span></span>
-                    <p>Diseñador Gráfico | Asistente en Sistemas | Desarrollador de Software en formación</p>
+                    <a href="index.html" class="nav-logo">BRAYAN<span>.ORTIZ</span></a>
+                    <p>Diseñador Gráfico | Asistente en Sistemas | Developer en formación</p>
                 </div>
                 <div class="footer-links">
                     <a href="index.html">Inicio</a>
-                    <a href="sobre-mi.html">Sobre Mí</a>
+                    <a href="sobre-mi.html">Sobre Mi</a>
                     <a href="experiencia.html">Experiencia</a>
                     <a href="proyectos.html">Proyectos</a>
                     <a href="habilidades.html">Habilidades</a>
-                    <a href="galeria.html">Galería</a>
+                    <a href="galeria.html">Galeria</a>
                     <a href="blog.html">Blog</a>
                     <a href="contacto.html">Contacto</a>
                 </div>
@@ -321,9 +274,12 @@
                     <a href="https://www.linkedin.com/in/brayan-alejandro-ortiz-calle-86077b2bb" target="_blank" rel="noopener" aria-label="LinkedIn">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c0 .718-.587 1.291-1.351 1.291-.764 0-1.35-.573-1.35-1.291 0-.717.586-1.29.764-1.291.176-.001.351-.075.526-.182.175-.108.45-.13.696-.13.717 0 1.351.573 1.351 1.291 0 .718-.587 1.291-1.351 1.291z"/></svg>
                     </a>
+                    <a href="mailto:ortizcallebrayanalejadro@gmail.com" aria-label="Email">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                    </a>
                 </div>
             </div>
-            <p class="footer-copy">© 2026 Brayan Ortiz Calle — Todos los derechos reservados.</p>
+            <p class="footer-copy">© 2025 Brayan Ortiz Calle — Todos los derechos reservados.</p>
         </div>
     </footer>
 
