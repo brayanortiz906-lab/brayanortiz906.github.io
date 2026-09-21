@@ -93,11 +93,10 @@
                 <div class="contacto-form-col">
                     <div class="contacto-form-card">
                         <h3>Envíame un mensaje ✈</h3>
-                        <form action="https://formsubmit.co/ortizcallebrayanalejadro@gmail.com" method="POST">
-                            <input type="hidden" name="_subject" value="Nuevo mensaje desde el portafolio de Brayan Ortiz Calle">
+                        <form id="contactForm" action="https://formsubmit.co/ajax/TU_CORREO_AQUI@EJEMPLO.COM" method="POST">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje desde mi portafolio">
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_next" value="https://brayanortiz906-lab.github.io/brayanortiz906.github.io/contacto.html?enviado=1">
+                            <input type="hidden" name="_autoresponse" value="Gracias por escribirme. He recibido tu mensaje y te responderé en menos de 24 horas.">
                             <input type="hidden" name="_cc" value="ortizcallebrayanalejadro@gmail.com">
                             <input type="text" name="_honeypot" style="display:none">
                             <div class="form-group">
@@ -113,9 +112,10 @@
                                 <label for="mensaje">Mensaje</label>
                                 <textarea id="mensaje" name="mensaje" rows="5" placeholder="Hola Brayan, me interesa tu trabajo..." required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary submit-btn">
+                            <button type="submit" id="btnEnviar" class="btn btn-primary submit-btn">
                                 <span>Enviar mensaje ✈</span>
                             </button>
+                            <p id="mensajeEstado" style="margin-top: 15px; font-weight: bold; text-align: center;"></p>
                             <p class="form-note">📧 Responderé en menos de 24 horas</p>
                         </form>
                     </div>
@@ -154,6 +154,45 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('btnEnviar');
+            const estado = document.getElementById('mensajeEstado');
+            const formData = new FormData(this);
+
+            btn.innerHTML = '<span>Enviando...</span>';
+            btn.disabled = true;
+            estado.textContent = '';
+            estado.style.color = 'inherit';
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    this.reset();
+                    estado.style.color = '#4ade80';
+                    estado.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
+                    btn.innerHTML = '<span>Enviar mensaje ✈</span>';
+                    btn.disabled = false;
+                } else {
+                    throw new Error(data.message || 'Error al enviar');
+                }
+            })
+            .catch(error => {
+                estado.style.color = '#f87171';
+                estado.textContent = 'Hubo un error al enviar. Por favor intenta de nuevo.';
+                btn.innerHTML = '<span>Enviar mensaje ✈</span>';
+                btn.disabled = false;
+            });
+        });
+    </script>
 </body>
 </html>
