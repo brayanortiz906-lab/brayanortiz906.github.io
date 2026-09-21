@@ -259,19 +259,19 @@
             <div class="newsletter-card">
                 <h3>📬 Suscríbete al Blog</h3>
                 <p>Recibe nuevas entradas y actualizaciones directamente en tu correo.</p>
-                <form action="https://formsubmit.co/ortizcallebrayanalejadro@gmail.com" method="POST" class="newsletter-form">
+                <form id="newsletterForm" action="https://formsubmit.co/ajax/TU_CORREO_AQUI@EJEMPLO.COM" method="POST" class="newsletter-form">
                     <input type="hidden" name="_subject" value="Nueva suscripción al blog de Brayan Ortiz Calle">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://brayanortiz906-lab.github.io/brayanortiz906.github.io/blog.html?suscrito=1">
+                    <input type="hidden" name="_autoresponse" value="Gracias por suscribirte al blog de Brayan Ortiz Calle. Recibirás nuevas entradas en tu correo.">
                     <input type="hidden" name="_cc" value="ortizcallebrayanalejadro@gmail.com">
                     <input type="text" name="_honeypot" style="display:none">
                     <div class="newsletter-input-group">
                         <input type="email" name="email" placeholder="tu@correo.com" required class="newsletter-input">
-                        <button type="submit" class="btn btn-primary newsletter-btn">Suscribirse</button>
+                        <button type="submit" id="btnNewsletter" class="btn btn-primary newsletter-btn">Suscribirse</button>
                     </div>
                     <p class="newsletter-note">🔒 Respeto tu privacidad — solo usaré tu correo para el blog. La primera vez recibirás un correo para activar.</p>
                 </form>
+                <p id="mensajeEstado" style="margin-top: 15px; font-weight: bold; text-align: center;"></p>
             </div>
         </div>
     </section>
@@ -306,6 +306,46 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('btnNewsletter');
+            const estado = document.getElementById('mensajeEstado');
+            const formData = new FormData(this);
+
+            btn.innerHTML = '<span>Suscribiendo...</span>';
+            btn.disabled = true;
+            estado.textContent = '';
+            estado.style.color = 'inherit';
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    this.reset();
+                    estado.style.color = '#4ade80';
+                    estado.textContent = '¡Suscrito con éxito! Recibirás nuevas entradas por correo.';
+                    btn.innerHTML = '<span>Suscribirse</span>';
+                    btn.disabled = false;
+                } else {
+                    throw new Error(data.message || 'Error al suscribir');
+                }
+            })
+            .catch(error => {
+                estado.style.color = '#f87171';
+                estado.textContent = 'Hubo un error al suscribir. Por favor intenta de nuevo.';
+                btn.innerHTML = '<span>Suscribirse</span>';
+                btn.disabled = false;
+            });
+        });
+    </script>
     <script src="js/main.js"></script>
     <script src="js/blog-filters.js"></script>
 </body>
